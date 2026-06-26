@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --surface: #1e293b;
+  --surface-light: #273449;
+  --primary: #6366f1;
+  --primary-hover: #7c83ff;
+  --muted: #94a3b8;
+  --border: #334155;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --pink: #ec4899;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+.storm-wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 24px;
+}
+.sr-only {
+  font-size: 1.8rem;
+}
+.storm-header {
+  margin: 20px 0 40px 0;
+}
+.storm-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.storm-header p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.stats-bar {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 35px 0;
+}
+.stat {
+  flex: 1;
+  min-width: 180px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: 0.25s;
+}
+.stat:hover {
+  transform: translateY(-3px);
+  background: var(--surface-light);
+}
+.stat-n {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-l {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.filter-btn {
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filter-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.idea-card {
+  background: var(--surface);
+  align-self: start;
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 18px;
+  transition: 0.25s;
+}
+.idea-card:hover {
+  transform: translateY(-6px);
+
+  border: 1px solid var(--primary);
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.18);
+}
+.idea-card.expanded {
+  border-color: var(--border-accent);
+}
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  font-size: 22px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.card-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.tag-legal {
+  background: #312e81;
+  color: #c7d2fe;
+}
+
+.tag-pressure {
+  background: #78350f;
+  color: #fde68a;
+}
+
+.tag-insurance {
+  background: #14532d;
+  color: #bbf7d0;
+}
+
+.tag-creative {
+  background: #831843;
+  color: #fbcfe8;
+}
+
+.tag-direct {
+  background: #164e63;
+  color: #a5f3fc;
+}
+.card-detail {
+  display: none;
+  margin-top: 24px;
+  padding-top: 24px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.card-detail.open {
+  display: block;
+}
+.card-detail p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+.card-detail ul {
+  margin: 16px 0;
+  padding-left: 22px;
+}
+
+.card-detail li {
+  margin-bottom: 10px;
+}
+
+.chevron {
+  margin-left: auto;
+  color: var(--muted);
+  transition: 0.3s;
+}
+.idea-card.expanded {
+  border-color: var(--primary);
+}
+.idea-card.expanded .chevron {
+  transform: rotate(180deg);
+}
+
+.strength-bar {
+  display: flex;
+  gap: 3px;
+  margin-top: 8px;
+}
+.strength-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.strength-dot.on {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
